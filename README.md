@@ -46,7 +46,7 @@ Animatedportfolio/
 
 ## 📷 Screenshots
 
-(Add light mode & dark mode screenshots here)
+
 
 ---
 
