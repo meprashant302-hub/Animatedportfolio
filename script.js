@@ -1,159 +1,85 @@
-/* ═══════════════════════════════════════════
+/* ═══════════════════════════════════════
    PRASHANT MISHRA — PORTFOLIO JS
-═══════════════════════════════════════════ */
+═══════════════════════════════════════ */
 
-/* ── THEME ── */
-const html      = document.documentElement;
-const themeBtn  = document.getElementById('themeBtn');
-const themeIcon = document.getElementById('themeIcon');
+/* ── MOBILE NAV ── */
+const hamburger = document.getElementById('hamburger');
+const navLinksEl = document.getElementById('navLinks');
 
-// load saved theme (default: dark)
-const saved = localStorage.getItem('pm-theme') || 'dark';
-html.setAttribute('data-theme', saved);
-themeIcon.textContent = saved === 'dark' ? '☀' : '☾';
-
-themeBtn.addEventListener('click', () => {
-  const cur  = html.getAttribute('data-theme');
-  const next = cur === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  themeIcon.textContent = next === 'dark' ? '☀' : '☾';
-  localStorage.setItem('pm-theme', next);
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinksEl.classList.toggle('open');
 });
 
+navLinksEl.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinksEl.classList.remove('open');
+  });
+});
+
+/* ── THEME TOGGLE (dark <-> light) ── */
+const themeBtn = document.getElementById('themeBtn');
+const rootEl = document.documentElement;
+
+/* Restore saved theme (falls back to whatever data-theme is already set in the HTML) */
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light' || savedTheme === 'dark') {
+  rootEl.setAttribute('data-theme', savedTheme);
+}
+
+themeBtn.addEventListener('click', () => {
+  const isLight = rootEl.getAttribute('data-theme') === 'light';
+  const next = isLight ? 'dark' : 'light';
+  rootEl.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
 
 /* ── SCROLL REVEAL ── */
-// generic reveal for .edu-item and .proj
-const revealEls = document.querySelectorAll('.edu-item, .proj');
-
+const revealEls = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+  entries.forEach((e) => {
     if (e.isIntersecting) {
-      // stagger slightly based on position in list
-      const siblings = [...e.target.parentElement.children];
+      const siblings = [...e.target.parentElement.children].filter(el => el.classList.contains('reveal'));
       const idx = siblings.indexOf(e.target);
-      setTimeout(() => {
-        e.target.classList.add('visible');
-      }, idx * 80);
+      setTimeout(() => e.target.classList.add('visible'), idx * 60);
       revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.15 });
-
+}, { threshold: 0.12 });
 revealEls.forEach(el => revealObs.observe(el));
-
-
-/* ── SKILLS REVEAL (left-slide) ── */
-const skillEls = document.querySelectorAll('.sk');
-
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      const siblings = [...e.target.parentElement.children];
-      const idx = siblings.indexOf(e.target);
-      setTimeout(() => {
-        e.target.classList.add('visible');
-      }, idx * 70);
-      skillObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-skillEls.forEach(el => skillObs.observe(el));
-
-
-/* ── COUNTER ANIMATION ── */
-const statNums = document.querySelectorAll('.sn[data-target]');
-
-function animateNum(el) {
-  const target   = parseFloat(el.dataset.target);
-  const isFloat  = el.dataset.float === 'true';
-  const duration = 1400;
-  const start    = performance.now();
-
-  function step(now) {
-    const elapsed  = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // ease out cubic
-    const eased    = 1 - Math.pow(1 - progress, 3);
-    const value    = eased * target;
-
-    el.textContent = isFloat ? value.toFixed(2) : Math.floor(value);
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      el.textContent = isFloat ? target.toFixed(2) : target;
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateNum(e.target);
-      counterObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-statNums.forEach(el => counterObs.observe(el));
-
 
 /* ── ACTIVE NAV HIGHLIGHT ── */
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.hn');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
 const navObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      navLinks.forEach(a => a.style.color = '');
-      const active = document.querySelector(`.hn[href="#${e.target.id}"]`);
-      if (active) active.style.color = 'var(--acc)';
+      navAnchors.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
     }
   });
 }, { threshold: 0.4 });
-
 sections.forEach(s => navObs.observe(s));
 
+/* ── STICKY NAV SHADOW ON SCROLL ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) navbar.style.boxShadow = '0 8px 30px -10px rgba(0,0,0,0.5)';
+  else navbar.style.boxShadow = 'none';
+});
 
-/* ── SMOOTH HOVER on proj — number color ── */
-// already handled via CSS :hover, nothing extra needed
+/* ── CONTACT FORM -> MAILTO ── */
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('cfName').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const msg = document.getElementById('cfMsg').value.trim();
 
-
-/* ── SUBTLE CURSOR TRAIL (optional, desktop only) ── */
-if (window.matchMedia('(pointer: fine)').matches) {
-  const trail = document.createElement('div');
-  trail.style.cssText = `
-    position: fixed;
-    width: 6px; height: 6px;
-    background: var(--acc);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
-    mix-blend-mode: difference;
-  `;
-  document.body.appendChild(trail);
-
-  let tx = 0, ty = 0, cx = 0, cy = 0;
-
-  document.addEventListener('mousemove', e => {
-    tx = e.clientX; ty = e.clientY;
-    trail.style.opacity = '1';
-  });
-
-  document.addEventListener('mouseleave', () => {
-    trail.style.opacity = '0';
-  });
-
-  (function loop() {
-    cx += (tx - cx) * 0.18;
-    cy += (ty - cy) * 0.18;
-    trail.style.left = cx + 'px';
-    trail.style.top  = cy + 'px';
-    requestAnimationFrame(loop);
-  })();
-}
+  const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+  const body = encodeURIComponent(`${msg}\n\n— ${name} (${email})`);
+  window.location.href = `mailto:prashantmishr302@gmail.com?subject=${subject}&body=${body}`;
+});
