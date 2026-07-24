@@ -1,358 +1,470 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prashant Mishra — Frontend Dev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;700;900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prashant Mishra — MERN Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- theme toggle -->
-  <button class="theme-btn" id="themeBtn" aria-label="toggle theme">
-    <span id="themeIcon">☀</span>
-  </button>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+<div class="bg-glow glow-3"></div>
 
-  <!-- noise overlay -->
-  <div class="noise" aria-hidden="true"></div>
-
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div class="hero-top-row">
-      <span class="badge">available for internships ✓</span>
-      <span class="badge mono">Prayagraj, UP 🇮🇳</span>
-    </div>
-
-    <div class="hero-main">
-      <div class="hero-name-area">
-        <p class="hey-text">hey, i'm</p>
-        <h1>
-          <span class="n1">Prashant</span>
-          <span class="n2">Mishra.</span>
-        </h1>
-        <p class="sub-role">frontend dev &amp; cs student</p>
-      </div>
-
-      
-
-      <div class="photo-slot">
-        <div class="photo-empty">
-          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          <small><img src="prashant mishra pic.jpeg" alt="Prashant Mishra" class="hero-photo" /></small>
-        </div>
-        <span class="tape tape-1"></span>
-        <span class="tape tape-2"></span>
-        <span class="tape tape-3"></span>
-        <span class="tape tape-4"></span>
-      </div>
-    </div>
-
-    <p class="hero-intro">
-      3+ years writing code. started with html &amp; css, got deep into js, react, dsa.
-      now in 6th sem @ iert prayagraj while building stuff on the side.
-      currently poking at machine learning too.
-    </p>
-
-    <div class="hero-nav">
-      <a href="#about" class="hn">about</a>
-      <a href="#skills" class="hn">skills</a>
-      <a href="#edu" class="hn">education</a>
-      <a href="#work" class="hn">work</a>
-      <a href="#contact" class="hn">contact</a>
-    </div>
-
-    <div class="stats-row">
-      <div class="stat">
-        <b class="sn" data-target="3">0</b><span class="sp">+</span>
-        <small>yrs coding</small>
-      </div>
-      <div class="stat-div">—</div>
-      <div class="stat">
-        <b class="sn" data-target="8.09" data-float="true">0</b>
-        <small>cgpa</small>
-      </div>
-      <div class="stat-div">—</div>
-      <div class="stat">
-        <b class="sn" data-target="2">0</b><span class="sp">+</span>
-        <small>projects</small>
-      </div>
-      <div class="stat-div">—</div>
-      <div class="stat">
-        <b>∞</b>
-        <small>to learn</small>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ MARQUEE ═══ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-inner">
-      <span>HTML</span><span class="mx">×</span>
-      <span>CSS</span><span class="mx">×</span>
-      <span>JavaScript</span><span class="mx">×</span>
-      <span>React</span><span class="mx">×</span>
-      <span>Tailwind</span><span class="mx">×</span>
-      <span>Git</span><span class="mx">×</span>
-      <span>DSA</span><span class="mx">×</span>
-      <span>Python</span><span class="mx">×</span>
-      <span>ML</span><span class="mx">×</span>
-      <span>HTML</span><span class="mx">×</span>
-      <span>CSS</span><span class="mx">×</span>
-      <span>JavaScript</span><span class="mx">×</span>
-      <span>React</span><span class="mx">×</span>
-      <span>Tailwind</span><span class="mx">×</span>
-      <span>Git</span><span class="mx">×</span>
-      <span>DSA</span><span class="mx">×</span>
-      <span>Python</span><span class="mx">×</span>
-      <span>ML</span><span class="mx">×</span>
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="navbar">
+  <div class="nav-in">
+    <a href="#home" class="logo"><span class="logo-br">&lt;/&gt;</span> Prashant</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certs">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-btn" id="themeBtn" aria-label="toggle theme">
+        <svg id="iconMoon" class="theme-icon icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg id="iconSun" class="theme-icon icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+</header>
 
-  <!-- ═══ ABOUT ═══ -->
-  <section class="sec" id="about">
-    <span class="sec-tag">// 01 — about</span>
-    <div class="about-wrap">
-      <div class="about-l">
-        <h2 class="sh">a little<br/><em>about me</em></h2>
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-in">
+    <div class="hero-text">
+      <span class="pill reveal">CS Engineer &nbsp;|&nbsp; MERN Stack Dev &nbsp;|&nbsp; Problem Solver</span>
+      <h1 class="hero-h1 reveal">Building Real Products,<br/><span class="grad-text">Not Just Code.</span></h1>
+      <p class="hero-p reveal">
+        3rd/4th-year CS undergrad at IERT Prayagraj who builds full MERN stack apps
+        and applies AI/ML to real problems — currently sharpening skills for
+        software engineering internships.
+      </p>
+      <div class="hero-btns reveal">
+        <a href="#projects" class="btn btn-primary">View My Work
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
       </div>
+      <div class="hero-social reveal">
+        <span class="hs-label">Connect with me</span>
+        <div class="hs-icons">
+          <a href="https://github.com/meprashant302-hub" target="_blank" aria-label="GitHub" class="sic">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/prashant-mishra-16a46b403/" target="_blank" aria-label="LinkedIn" class="sic">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a href="mailto:prashantmishr302@gmail.com" aria-label="Email" class="sic">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+          </a>
+          <a href="https://leetcode.com/u/prashantmishraaa/" target="_blank" aria-label="LeetCode" class="sic">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 2.05L6.24 9.44a2.6 2.6 0 000 3.65l4.5 4.55a2.55 2.55 0 003.63 0l3.09-3.13a1.3 1.3 0 000-1.82 1.27 1.27 0 00-1.8 0l-2.98 3.02a.85.85 0 01-1.2 0l-4.4-4.45a.87.87 0 010-1.22l7.14-7.24a1.3 1.3 0 000-1.82 1.27 1.27 0 00-1.8 0z"/><path d="M18.5 11.4a1.28 1.28 0 00-1.28 1.28 1.28 1.28 0 102.56 0 1.28 1.28 0 00-1.28-1.28z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="photo-ring">
+        <img src="prashant mishra pic.jpeg" alt="Prashant Mishra" class="hero-photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')"/>
+        <svg class="avatar-fallback" width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="float-badge">
+        <span class="fb-dot"></span> Open to Opportunities
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="sec" id="about">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </span>
+      <h2 class="sec-title">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-l reveal">
+        <p class="about-p">
+          I started coding around 2022 — just HTML &amp; CSS at first, then went deep
+          into JavaScript, React, and now the full MERN stack. Studying CS at IERT
+          Prayagraj (4th year), and going deeper into AI/ML on the side — recently
+          building an AI resume–JD matcher and completing job simulations with
+          Walmart Global Tech and Tata via Forage.
+        </p>
+      </div>
+
       <div class="about-r">
-        <p class="ab big-ab">
-          i started coding around 2022 — just html &amp; css at first. thought making a webpage appear on screen was honestly insane. then javascript, then react. 3 years in and i still get that feeling sometimes.
-        </p>
-        <p class="ab">
-          studying cs at iert prayagraj. the coursework — algorithms, dbms, computer networks, os — taught me to actually think about problems instead of just googling solutions. that stuff changes how you write code.
-        </p>
-        <p class="ab">
-          i've been picking up machine learning on the side. python, sklearn, basic models. the intersection of ml and web is where i want to go. still early but excited about it.
-        </p>
-        <span class="scrawl">← currently: 6th sem, building things, figuring out next steps</span>
+        <div class="quality-card reveal">
+          <span class="qc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3a1.5 1.5 0 013 0V4h3a1 1 0 011 1v3h1a2.5 2.5 0 010 5h-1v3a1 1 0 01-1 1h-3v-1a1.5 1.5 0 00-3 0v1h-3a1 1 0 01-1-1v-3H4.5a2.5 2.5 0 010-5H6V5a1 1 0 011-1h2.5V3z"/></svg></span>
+          <h4>Problem Solver</h4>
+          <p>Love tackling DSA challenges</p>
+        </div>
+        <div class="quality-card reveal">
+          <span class="qc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+          <h4>Quick Learner</h4>
+          <p>Always eager to learn new things</p>
+        </div>
+        <div class="quality-card reveal">
+          <span class="qc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+          <h4>Team Player</h4>
+          <p>Believe in teamwork and collaboration</p>
+        </div>
+        <div class="quality-card reveal">
+          <span class="qc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <h4>Detail Oriented</h4>
+          <p>Focus on writing clean, efficient code</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ SKILLS ═══ -->
-  <section class="sec" id="skills">
-    <span class="sec-tag">// 02 — skills</span>
-    <h2 class="sh">what i<br/><em>use</em></h2>
-
-    <div class="skills-wrap">
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/html5.svg" class="sk-ico" alt="HTML5"/>
-          <span class="sk-nm">HTML5</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">3+ yrs</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://www.svgrepo.com/show/391812/css.svg" class="sk-ico" alt="CSS3"/>
-          <span class="sk-nm">CSS3</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">3+ yrs</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/javascript.svg" class="sk-ico" alt="JS"/>
-          <span class="sk-nm">JavaScript</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">2+ yrs</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d half"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/react.svg" class="sk-ico" alt="React"/>
-          <span class="sk-nm">React</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">1+ yr</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/git.svg" class="sk-ico" alt="Git"/>
-          <span class="sk-nm">Git & GitHub</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">2+ yrs</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d half"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/python.svg" class="sk-ico" alt="ML"/>
-          <span class="sk-nm">ML / Python</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">~1 yr</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d half"></span><span class="d"></span><span class="d"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sk reveal-sk">
-        <div class="sk-left">
-          <img src="https://simpleicons.org/icons/thealgorithms.svg" class="sk-ico" alt="DSA"/>
-          <span class="sk-nm">DSA</span>
-        </div>
-        <div class="sk-right">
-          <span class="sk-yr">2+ yrs</span>
-          <div class="dots">
-            <span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d full"></span><span class="d"></span>
-          </div>
-        </div>
-      </div>
-
+<!-- ═══ SKILLS ═══ -->
+<section class="sec" id="skills">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      </span>
+      <h2 class="sec-title">Skills &amp; Technologies</h2>
     </div>
 
-    <p class="dots-note">// the dots are just how i'd honestly rate myself. not a %.</p>
-  </section>
+    <div class="skill-grid">
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/html5.svg" class="skill-ico"/><span>HTML5</span></div>
+      <div class="skill-tile reveal"><img src="https://www.svgrepo.com/show/391812/css.svg" class="skill-ico"/><span>CSS3</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/javascript.svg" class="skill-ico"/><span>JavaScript</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/react.svg" class="skill-ico"/><span>React</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/nodedotjs.svg" class="skill-ico"/><span>Node.js</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/express.svg" class="skill-ico"/><span>Express.js</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/mongodb.svg" class="skill-ico"/><span>MongoDB</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/tailwindcss.svg" class="skill-ico"/><span>Tailwind</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/mysql.svg" class="skill-ico"/><span>SQL</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/python.svg" class="skill-ico"/><span>Python</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/scikitlearn.svg" class="skill-ico"/><span>scikit-learn</span></div>
+      <div class="skill-tile reveal"><img src="https://simpleicons.org/icons/git.svg" class="skill-ico"/><span>Git</span></div>
+    </div>
 
-  <!-- ═══ EDUCATION ═══ -->
-  <section class="sec" id="edu">
-    <span class="sec-tag">// 03 — education</span>
-    <h2 class="sh">where i<br/><em>studied</em></h2>
+    <div class="dsa-strip reveal">
+      <p>100+ DSA questions solved across <b>LeetCode</b> &amp; <b>GeeksforGeeks</b></p>
+    </div>
+  </div>
+</section>
 
-    <div class="edu-wrap">
+<!-- ═══ EXPERIENCE / INTERNSHIP TIMELINE ═══ -->
+<section class="sec" id="experience">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+      </span>
+      <h2 class="sec-title">Experience</h2>
+    </div>
+
+    <div class="timeline-h reveal">
+      <div class="th-line"></div>
+      <div class="th-node active">
+        <span class="th-dot"></span>
+        <div class="th-card">
+          <span class="th-status">In Progress</span>
+          <h4>AI for Sustainable Development</h4>
+          <p class="th-org">1M1B — 6 Week Program</p>
+          <p class="th-desc">Applying AI to real sustainable-development problems as part of a hands-on cohort track.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section class="sec" id="projects">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </span>
+      <h2 class="sec-title">Projects Showcase</h2>
+    </div>
+
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg></div>
+        <div class="proj-body">
+          <span class="proj-cat">Web App</span>
+          <h3>Inventory Management System</h3>
+          <p>Real-time stock tracking app — where React state management and Tailwind actually clicked for me.</p>
+          <div class="proj-tags"><span>React</span><span>Tailwind</span></div>
+          <a href="#" class="proj-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+        <div class="proj-body">
+          <span class="proj-cat">AI / ML</span>
+          <h3>AI Resume–JD Matcher</h3>
+          <p>Scores resume-to-job-description match using TF-IDF vectorization and cosine similarity.</p>
+          <div class="proj-tags"><span>Python</span><span>scikit-learn</span></div>
+          <a href="#" class="proj-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14.5 14.5 0 013.8 9.5A14.5 14.5 0 0112 21a14.5 14.5 0 01-3.8-9A14.5 14.5 0 0112 3z"/></svg></div>
+        <div class="proj-body">
+          <span class="proj-cat">Frontend</span>
+          <h3>Portfolio Website</h3>
+          <p>This site — rebuilt a few times now. Every version teaches something new about layout and UX.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <a href="https://github.com/meprashant302-hub" target="_blank" class="proj-link">Source <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section class="sec" id="certs">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg>
+      </span>
+      <h2 class="sec-title">Certifications</h2>
+    </div>
+
+    <div class="cert-grid">
+      <a class="cert-card reveal" href="certs/cert-walmart-swe.jpg" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-walmart-swe.jpg" alt="Walmart cert"/></div>
+        <div class="cert-info">
+          <h4>Advanced Software Engineering Job Simulation</h4>
+          <p>Walmart Global Tech · via Forage</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="certs/cert-tata-genai.jpg" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-tata-genai.jpg" alt="Tata cert"/></div>
+        <div class="cert-info">
+          <h4>GenAI Powered Data Analytics Job Simulation</h4>
+          <p>Tata · via Forage</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="https://www.hackerrank.com/certificates/736d634807c8" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-sql-advanced.jpg" alt="SQL Advanced cert"/></div>
+        <div class="cert-info">
+          <h4>SQL (Advanced)</h4>
+          <p>HackerRank · Verify ↗</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="https://www.hackerrank.com/certificates/78375c2f286c" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-sql-basic.jpg" alt="SQL Basic cert"/></div>
+        <div class="cert-info">
+          <h4>SQL (Basic)</h4>
+          <p>HackerRank · Verify ↗</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="https://knowledgegate.in/certificate/39D6092B" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-js-knowledgegate.jpg" alt="JavaScript cert"/></div>
+        <div class="cert-info">
+          <h4>Complete JavaScript</h4>
+          <p>KnowledgeGate · Scored 90%</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="certs/cert-cisco-python.jpg" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-cisco-python.jpg" alt="Python cert"/></div>
+        <div class="cert-info">
+          <h4>Python Essentials 2</h4>
+          <p>Cisco Networking Academy</p>
+        </div>
+      </a>
+      <a class="cert-card reveal" href="certs/cert-hp-life-ai.jpg" target="_blank">
+        <div class="cert-thumb"><img src="certs/cert-hp-life-ai.jpg" alt="HP LIFE AI cert"/></div>
+        <div class="cert-info">
+          <h4>AI for Beginners</h4>
+          <p>HP LIFE</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACHIEVEMENTS ═══ -->
+<section class="sec" id="achievements">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3a2 2 0 01-2 4M7 5H4a2 2 0 002 4"/></svg>
+      </span>
+      <h2 class="sec-title">Achievements</h2>
+    </div>
+
+    <div class="ach-grid">
+      <div class="ach-card reveal">
+        <span class="ach-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></span>
+        <h4>100+ DSA Questions</h4>
+        <p>Solved across LeetCode &amp; GeeksforGeeks</p>
+      </div>
+      <div class="ach-card reveal">
+        <span class="ach-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 2.2 3.1-.5.5 3.1L20 9l-2.2 2.2.5 3.1-3.1.5L13 17l-1-1-1 1-2.2-2.2-3.1-.5.5-3.1L4 9l2.2-2.2-.5-3.1 3.1.5L11 2z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h4>7 Verified Certifications</h4>
+        <p>Across web dev, SQL, Python &amp; AI</p>
+      </div>
+      <div class="ach-card reveal">
+        <span class="ach-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+        <h4>2 Forage Job Simulations</h4>
+        <p>Completed with Walmart Global Tech &amp; Tata</p>
+      </div>
+      <div class="ach-card reveal">
+        <span class="ach-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+        <h4>3 Real-World Projects</h4>
+        <p>Shipped end to end, from idea to deploy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION TIMELINE ═══ -->
+<section class="sec" id="education">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+      </span>
+      <h2 class="sec-title">Education</h2>
+    </div>
+
+    <div class="edu-timeline">
       <div class="edu-item reveal">
-        <span class="e-yr">2020–21</span>
-        <div class="e-line"><span class="e-dot"></span><span class="e-vl"></span></div>
-        <div class="e-body">
-          <h3>High School</h3>
+        <div class="edu-dot"></div>
+        <div class="edu-card">
+          <span class="edu-yr">2020–21</span>
+          <h4>High School</h4>
           <p>Saraswati Vidya Mandir Sr. Sec. School, Sultanpur</p>
         </div>
       </div>
       <div class="edu-item reveal">
-        <span class="e-yr">2022–23</span>
-        <div class="e-line"><span class="e-dot"></span><span class="e-vl"></span></div>
-        <div class="e-body">
-          <h3>Intermediate</h3>
+        <div class="edu-dot"></div>
+        <div class="edu-card">
+          <span class="edu-yr">2022–23</span>
+          <h4>Intermediate</h4>
           <p>Saraswati Vidya Mandir Sr. Sec. School, Sultanpur</p>
         </div>
       </div>
-      <div class="edu-item reveal now">
-        <span class="e-yr">2023–27</span>
-        <div class="e-line"><span class="e-dot blink-dot"></span></div>
-        <div class="e-body">
-          <h3>B.Tech — Computer Science <span class="now-tag">now</span></h3>
+      <div class="edu-item reveal">
+        <div class="edu-dot active"></div>
+        <div class="edu-card current">
+          <span class="edu-yr">2023–27 <b class="edu-now">Current</b></span>
+          <h4>B.Tech — Computer Science</h4>
           <p>Institute of Engineering &amp; Rural Technology, Prayagraj</p>
-          <p class="e-extra">CGPA 8.09 &nbsp;·&nbsp; 6th Sem &nbsp;·&nbsp; Algo · DBMS · CN · OS</p>
+          <p class="edu-extra">CGPA 8.14 · 4th Year, 7th Sem</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ WORK ═══ -->
-  <section class="sec" id="work">
-    <span class="sec-tag">// 04 — work</span>
-    <h2 class="sh">things i<br/><em>built</em></h2>
-
-    <div class="work-wrap">
-
-      <div class="proj reveal">
-        <div class="proj-num">01</div>
-        <div class="proj-body">
-          <div class="proj-head">
-            <h3 class="proj-title">Inventory Management System</h3>
-            <div class="proj-stack">
-              <span>React</span><span>Tailwind</span>
-            </div>
-          </div>
-          <p class="proj-desc">
-            built this to track inventory and stock in real time. this is where react state management actually clicked for me. and tailwind — hated it at first, now can't go back.
-          </p>
-          <a href="#" class="proj-link">view project ↗</a>
-        </div>
-      </div>
-
-      <div class="proj reveal">
-        <div class="proj-num">02</div>
-        <div class="proj-body">
-          <div class="proj-head">
-            <h3 class="proj-title">Portfolio Website</h3>
-            <div class="proj-stack">
-              <span>HTML</span><span>CSS</span><span>JS</span>
-            </div>
-          </div>
-          <p class="proj-desc">
-            you're looking at it right now. this is like the 3rd version. building your own portfolio is oddly hard — you overthink every little thing. still good practice for layout and css.
-          </p>
-          <a href="https://github.com/meprashant302-hub" class="proj-link" target="_blank">source ↗</a>
-        </div>
-      </div>
-
+<!-- ═══ CODING PROFILES ═══ -->
+<section class="sec" id="coding">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="sec-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      </span>
+      <h2 class="sec-title">GitHub &amp; Coding Profiles</h2>
     </div>
-  </section>
 
-  <!-- ═══ CONTACT ═══ -->
-  <section class="sec" id="contact">
-    <span class="sec-tag">// 05 — contact</span>
-    <div class="contact-wrap">
-      <h2 class="sh contact-h">let's<br/><em>talk.</em></h2>
-      <div class="contact-side">
-        <p class="c-note">open to internships, collabs, or just a conversation about something cool. reach out.</p>
-        <div class="c-links">
-          <a href="mailto:prashantmishr302@gmail.com" class="cl">
-            <span class="cl-k">email</span>
-            <span class="cl-v">prashantmishr302@gmail.com ↗</span>
-          </a>
-          <a href="tel:+919555858869" class="cl">
-            <span class="cl-k">phone</span>
-            <span class="cl-v">+91 95558 58869 ↗</span>
-          </a>
-          <a href="https://www.linkedin.com/in/prashant-mishra-16a46b403/" target="_blank" class="cl">
-            <span class="cl-k">linkedin</span>
-            <span class="cl-v">prashant-mishra ↗</span>
-          </a>
-          <a href="https://github.com/meprashant302-hub" target="_blank" class="cl">
-            <span class="cl-k">github</span>
-            <span class="cl-v">meprashant302-hub ↗</span>
-          </a>
-          <a href="https://leetcode.com/u/prashantmishraaa/" target="_blank" class="cl">
-            <span class="cl-k">leetcode</span>
-            <span class="cl-v">prashantmishraaa ↗</span>
-          </a>
+    <div class="profile-grid">
+      <a href="https://github.com/meprashant302-hub" target="_blank" class="profile-card reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        <span>GitHub</span>
+        <small>meprashant302-hub ↗</small>
+      </a>
+      <a href="https://leetcode.com/u/prashantmishraaa/" target="_blank" class="profile-card reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 2.05L6.24 9.44a2.6 2.6 0 000 3.65l4.5 4.55a2.55 2.55 0 003.63 0l3.09-3.13a1.3 1.3 0 000-1.82 1.27 1.27 0 00-1.8 0l-2.98 3.02a.85.85 0 01-1.2 0l-4.4-4.45a.87.87 0 010-1.22l7.14-7.24a1.3 1.3 0 000-1.82 1.27 1.27 0 00-1.8 0z"/><path d="M18.5 11.4a1.28 1.28 0 00-1.28 1.28 1.28 1.28 0 102.56 0 1.28 1.28 0 00-1.28-1.28z"/></svg>
+        <span>LeetCode</span>
+        <small>prashantmishraaa ↗</small>
+      </a>
+      <a href="https://www.geeksforgeeks.org/user/prashantmz2cm/" target="_blank" class="profile-card reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.3L19.5 8 12 11.7 4.5 8 12 4.3zM4 9.7l7 3.5v7.1l-7-3.5V9.7zm9 10.6v-7.1l7-3.5v7.1l-7 3.5z"/></svg>
+        <span>GeeksforGeeks</span>
+        <small>prashantmz2cm ↗</small>
+      </a>
+      <a href="https://www.hackerrank.com/profile/meprashant302" target="_blank" class="profile-card reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>HackerRank</span>
+        <small>meprashant302 ↗</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="sec" id="contact">
+  <div class="sec-in">
+    <div class="contact-grid">
+      <div class="contact-l reveal">
+        <h2 class="sec-title">Let's Connect</h2>
+        <p>I'm always open to discussing new opportunities, internships, or just having a chat.</p>
+        <div class="contact-info">
+          <a href="mailto:prashantmishr302@gmail.com">prashantmishr302@gmail.com</a>
+          <a href="tel:+919555858869">+91 95558 58869</a>
         </div>
+        <a href="mailto:prashantmishr302@gmail.com" class="btn btn-primary">Get In Touch</a>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="cf-row">
+          <input type="text" id="cfName" placeholder="Your Name" required />
+          <input type="email" id="cfEmail" placeholder="Your Email" required />
+        </div>
+        <textarea id="cfMsg" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary cf-submit">Send Message
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="cf-note">Opens your email app with the message pre-filled.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-col">
+      <a href="#home" class="logo"><span class="logo-br">&lt;/&gt;</span> Prashant</a>
+      <p>© 2026 Prashant Mishra. All rights reserved.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Quick Links</h5>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Follow Me</h5>
+      <div class="foot-icons">
+        <a href="https://github.com/meprashant302-hub" target="_blank" class="sic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/prashant-mishra-16a46b403/" target="_blank" class="sic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+        <a href="mailto:prashantmishr302@gmail.com" class="sic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></a>
       </div>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="foot">
-    <span>Prashant Mishra</span>
-    <span class="foot-mid">built this myself. </span>
-    <span class="mono">© 2026</span>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
